@@ -1,4 +1,4 @@
-import {b} from 'b.js';
+import {b} from './b';
 
 export class a extends b {
     constructor(name) {
