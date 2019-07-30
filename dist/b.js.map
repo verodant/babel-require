@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/b.js"],"names":["b","name","console","log"],"mappings":";;;;;;;;;IAAaA,C,GACT,WAAYC,IAAZ,EAAkB;AAAA;;AACdC,EAAAA,OAAO,CAACC,GAAR,CAAY,YAAZ,EAA0BF,IAA1B;AACH,C","sourcesContent":["export class b{\n    constructor(name) {\n        console.log('clas b -> ', name)\n    }\n}"],"file":"b.js"}

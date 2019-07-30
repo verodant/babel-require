@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/init.js"],"names":["a_instance","a","console","log"],"mappings":";;AAAA;;AAEA,IAAMA,UAAU,GAAG,IAAIC,IAAJ,CAAM,YAAN,CAAnB;AAEAC,OAAO,CAACC,GAAR,CAAYH,UAAZ","sourcesContent":["import {a} from \"./a\";\n\nconst a_instance = new a('kakakakaka')\n\nconsole.log(a_instance);"],"file":"init.js"}
