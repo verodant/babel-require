@@ -7,7 +7,7 @@ const presets = [[
     }
   }
 ]];
-const plugins = [
+const plugins = ["@babel/plugin-transform-modules-amd",
   "@babel/plugin-transform-regenerator",
   [
     "@babel/plugin-proposal-decorators",
