@@ -6,38 +6,55 @@ define(["exports", "./b"], function (_exports, _b2) {
   });
   _exports.a = void 0;
 
-  function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+  var _class;
 
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+  function log(target, name, descriptor) {
+    var original = descriptor.value;
 
-  function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+    if (typeof original === 'function') {
+      descriptor.value = function () {
+        for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+          args[_key] = arguments[_key];
+        }
 
-  function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+        console.log("Arguments: ".concat(args));
 
-  function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+        try {
+          var result = original.apply(this, args);
+          console.log("Result: ".concat(result));
+          return result;
+        } catch (e) {
+          console.log("Error: ".concat(e));
+          throw e;
+        }
+      };
+    }
 
-  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+    return descriptor;
+  }
 
-  function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-  var a =
+  var a = (_class =
   /*#__PURE__*/
   function (_b) {
-    _inherits(a, _b);
+    babelHelpers.inherits(a, _b);
+    babelHelpers.createClass(a, [{
+      key: "sum",
+      value: function sum(a, b) {
+        return a + b;
+      }
+    }]);
 
     function a(name) {
       var _this;
 
-      _classCallCheck(this, a);
-
-      _this = _possibleConstructorReturn(this, _getPrototypeOf(a).call(this, name));
-      console.log('clas a -> ', name);
+      babelHelpers.classCallCheck(this, a);
+      _this = babelHelpers.possibleConstructorReturn(this, babelHelpers.getPrototypeOf(a).call(this, name));
+      console.log('clas a -> ', name, '&&', _this.sum(1, 9));
       return _this;
     }
 
     return a;
-  }(_b2.b);
-
+  }(_b2.b), (babelHelpers.applyDecoratedDescriptor(_class.prototype, "sum", [log], Object.getOwnPropertyDescriptor(_class.prototype, "sum"), _class.prototype)), _class);
   _exports.a = a;
 });
 //# sourceMappingURL=a.js.map

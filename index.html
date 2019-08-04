@@ -8,18 +8,21 @@
     Open console tab in dev tools!
 
     <script src="node_modules/requirejs/require.js"></script>
-
+    <script src="node_modules/@babel/polyfill/dist/polyfill.min.js"></script>
+    <script src="dist/babel-helpers.js"></script>
     <script>
         requirejs.config({
             paths: {
-                es6: '../es6',
-                babel: '../node_modules/@babel/standalone/babel.min',
-                'babel-plugin-module-resolver': '../node_modules/babel-plugin-module-resolver-standalone/index'
+            //    es6: '../es6',
             }
         });
     </script>
+    
+    
     <script>
-        require(["dist/init.js"]);
+        require([
+            "dist/init.js"
+        ]);
     </script>
 </body>
 </html>
