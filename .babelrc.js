@@ -7,7 +7,7 @@ const presets = [[
     }
   }
 ]];
-const plugins = ["@babel/plugin-transform-modules-amd",
+const plugins = [
   "@babel/plugin-transform-regenerator",
   [
     "@babel/plugin-proposal-decorators",
@@ -16,8 +16,9 @@ const plugins = ["@babel/plugin-transform-modules-amd",
   "@babel/plugin-external-helpers"];
 
 /* require("@babel/register")({
-  ignore: []
-}); */
+  ignore: ['node_modules'],
+  only: [/lit-element/]
+});  */
 
 
 
