@@ -13,7 +13,11 @@ const plugins = ["@babel/plugin-transform-modules-amd",
     "@babel/plugin-proposal-decorators",
     { "legacy": true }
   ],
-  "@babel/plugin-external-helpers"];
+  "@babel/plugin-external-helpers",
+  ["@pika/web/assets/babel-plugin.js",
+    { "dir": "./dist/web_modules" }
+  ]
+];
 
 /* require("@babel/register")({
   ignore: ['node_modules'],

@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prepare": "pika install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "generate:helpers": "babel-external-helpers > dist/babel-helpers.js",
-    "build": "rm -rf dist && mkdir dist && npm run generate:helpers && babel src --out-dir dist --source-maps",
+    "copy:web_modules": "cp -r ./web_modules ./src",
+    "build": "rm -rf dist && mkdir dist && npm run generate:helpers && npm run copy:web_modules && babel src --out-dir dist --source-maps",
     "generate:runtime": "rm -rf @babel && babel --plugins @babel/plugin-transform-modules-amd node_modules/@babel/runtime/helpers/esm --out-dir @babel/runtime/helpers "
   },
   "author": "",
@@ -14,7 +16,8 @@
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "lit-element": "^2.2.1",
-    "requirejs": "^2.3.6"
+    "requirejs": "^2.3.6",
+    "ttl-localstorage": "^1.5.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
@@ -26,6 +29,14 @@
     "@babel/plugin-transform-regenerator": "^7.4.5",
     "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
-    "@babel/runtime": "^7.5.5"
+    "@babel/runtime": "^7.5.5",
+    "@pika/web": "^0.5.1"
+  },
+  "@pika/web": {
+    "webDependencies": [
+      "@babel/polyfill",
+      "lit-element",
+      "ttl-localstorage"
+    ]
   }
 }
