@@ -1,3 +1,9 @@
+class kk {
+    [Symbol.iterator](){
+        
+    }
+}
+
 export function sum(a, b) {
     function* pp(){
         yield 1;

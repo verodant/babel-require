@@ -1,9 +1,14 @@
 module.exports = {
     "name": "my-project",
     "jest": {
-      "verbose": true
+        "verbose": true
     },
-   /*  transform: {
-        
-    }  */
-  };
+    /** para sobreescribir la configuracion de babel del proyecto */
+    /*  
+    
+    transform: {
+         
+    }  
+     
+     */
+};
