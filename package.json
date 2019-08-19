@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prepare": "pika install",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --no-cache",
     "generate:helpers": "babel-external-helpers > dist/babel-helpers.js",
     "copy:web_modules": "cp -r ./web_modules ./src",
     "build": "rm -rf dist && mkdir dist && npm run generate:helpers && npm run copy:web_modules && babel src --out-dir dist --source-maps",
@@ -30,7 +30,9 @@
     "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/runtime": "^7.5.5",
-    "@pika/web": "^0.5.1"
+    "@pika/web": "^0.5.1",
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0"
   },
   "@pika/web": {
     "webDependencies": [

@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/sum.js"],"names":["sum","a","b"],"mappings":";;;;;;;;AAAO,WAASA,GAAT,CAAaC,CAAb,EAAgBC,CAAhB,EAAmB;AACtB,WAAOD,CAAC,GAAGC,CAAX;AACD","sourcesContent":["export function sum(a, b) {\n    return a + b;\n  }"],"file":"sum.js"}

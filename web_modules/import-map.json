@@ -1,0 +1,7 @@
+{
+  "imports": {
+    "@babel/polyfill": "./@babel/polyfill.js",
+    "lit-element": "./lit-element.js",
+    "ttl-localstorage": "./ttl-localstorage.js"
+  }
+}
